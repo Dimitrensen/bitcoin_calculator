@@ -5,9 +5,6 @@ from datetime import datetime
 
 app = Flask(__name__)
 
-# Create and deploy a microservice where a client application will be able to:
-
-# retrieve the current price of Bitcoin (BTC) in both EUR and CZK;
 
 # local file instead of database
 DATA_FILE = 'data.txt'
@@ -16,6 +13,7 @@ API_URL = 'https://api.coingecko.com/api/v3/simple/price?ids=bitcoin&vs_currenci
 # 12 months in seconds
 # RETENTION_PERIOD = 12 * 30 * 24 * 60 * 60 -- if monthily/daily average is to be calculated
 
+# retrieve the current price of Bitcoin (BTC) in both EUR and CZK;
 def get_btc_price():
     response = requests.get(API_URL)
     data = response.json()
